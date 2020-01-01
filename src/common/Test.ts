@@ -1,0 +1,1 @@
+export default (name: string) => `hi there ${name}`;
