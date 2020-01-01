@@ -11,7 +11,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            "~common": path.resolve(__dirname, "../common")
+            "~common": path.resolve(__dirname, "./common")
         },
         extensions: ['.ts', '.js', '.json'],
         modules:[
