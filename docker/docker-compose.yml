@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  server-node:
+    build: "./services/server-node"
+    # override the default Dockerfile command
+    command: "npm run dev"
+    volumes:
+      - ../src/server:/var/app/server
+    ports:
+      - 3001:3000
+      - 5858:5858
