@@ -1,4 +1,1 @@
-
-export default () => {
-    return "Howdy wowdy woo"
-};
+export default (): string => 'Howdy wowdy woo';

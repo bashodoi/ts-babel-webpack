@@ -1,8 +1,7 @@
 import express from 'express';
 
 import name from 'lib/Name';
-import greeting from "~common/Greeting";
-
+import greeting from '~common/Greeting';
 
 (async function(): Promise<void> {
     const app = express();
