@@ -1,5 +1,5 @@
 FROM node:12-alpine
 
-WORKDIR /var/app/server
+WORKDIR /var/www/server
 
 CMD ["npm", "run", "start"]
