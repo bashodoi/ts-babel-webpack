@@ -1,0 +1,19 @@
+{
+    // eslint
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    // VSCode autoformatting
+    "editor.formatOnSave": true, // VSCode formatting for json, html, css, etc.
+    // disable VSCode autoformatting and use eslint+prettier for js and ts
+    "[javascript]": {
+        "editor.formatOnSave": false,
+    },
+    "[typescript]": {
+        "editor.formatOnSave": false,
+    },
+}
