@@ -1,18 +1,18 @@
-import cleanNumber from "lib/Number";
-import greeting from "~common/Test";
+import express from 'express';
 
-export class C {
+import name from 'lib/Name';
+import greeting from "~common/Greeting";
 
-    private x: number;
 
-    constructor(num: string){
-        this.x = cleanNumber(num);
-    }
-    getX = () => this.x;
-    setX = (newVal: number) => { this.x = newVal; }
-}
+(async function(): Promise<void> {
+    const app = express();
+    const port = 3000;
 
-const numberString = "10cccx";
-export let x = new C(numberString);
-export let y = { ...{ some: "value" } }
-console.log(`${greeting(`poopyface`)} your number is ${x.getX()}`);
+    app.get('/', (req, res) => {
+        res.send(greeting());
+    });
+
+    app.post('/post', (req, res) => res.send({ value: `${greeting()} ${name('World')} from post` }));
+
+    app.listen(port, () => console.log(`${greeting()} ${name('World')} server listening on port ${port}!`));
+})();
