@@ -41,7 +41,7 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build:types": "tsc --emitDeclarationOnly",
-    "dev": "nodemon -L",
+    "dev": "nodemon",
     "start": "node ./dist/app.bundle.js",
     "test": "jest",
     "lint:ts": "eslint \"**/*.{js,ts,tsx}\""
