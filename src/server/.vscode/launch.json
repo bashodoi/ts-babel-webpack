@@ -10,7 +10,7 @@
       "name": "Docker: Attach to build",
       // "preLaunchTask": "tsc-watch",
       "protocol": "auto",
-      "port": 5858,
+      "port": 9229,
       "restart": true,
       "localRoot": "${workspaceFolder}/dist",
       "remoteRoot": "/var/www/server/dist",
@@ -25,7 +25,7 @@
       "type": "node",
       "request": "attach",
       "name": "Docker: Attach to ts-node",
-      "port": 5858,
+      "port": 9229,
       // "address": "localhost",
       "sourceMapPathOverrides": {
         "/var/www/server/*": "${workspaceFolder}/*"

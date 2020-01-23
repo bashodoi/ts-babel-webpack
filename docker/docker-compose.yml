@@ -9,4 +9,4 @@ services:
       - ../src/server:/var/www/server
     ports:
       - 3001:3000
-      - 5858:5858
+      - 9229:9229
