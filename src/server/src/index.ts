@@ -8,5 +8,11 @@ import './routes';
         app.listen(port, () => console.log(`Express server listening on port ${port}!`));
     }
 
-    initializeServer();
+    Promise.all([])
+        .then(([redisInstance]) => {
+            initializeServer();
+        })
+        .catch(e => {
+            console.error('Unable to initialize app correctly');
+        });
 })();
