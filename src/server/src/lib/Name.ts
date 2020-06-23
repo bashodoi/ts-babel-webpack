@@ -1,1 +1,1 @@
-export default (name: string): string => name;
+export default (name: string, suffix = 'aroony'): string => `${name}-${suffix}`;
