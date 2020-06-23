@@ -1,17 +1,12 @@
-import express from 'express';
+import app from 'config/express';
 
-import name from 'lib/Name';
-import greeting from '~common/Greeting';
+import './routes';
 
 (async function(): Promise<void> {
-    const app = express();
-    const port = 3000;
+    function initializeServer(): void {
+        const port = 3000;
+        app.listen(port, () => console.log(`Express server listening on port ${port}!`));
+    }
 
-    app.get('/', (req, res) => {
-        res.send(greeting());
-    });
-
-    app.post('/post', (req, res) => res.send({ value: `${greeting()} ${name('World')} from post` }));
-
-    app.listen(port, () => console.log(`${greeting()} ${name('World')} server listening on port ${port}!`));
+    initializeServer();
 })();
