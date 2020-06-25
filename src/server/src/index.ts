@@ -1,4 +1,7 @@
+import 'reflect-metadata';
 import app from 'config/express';
+
+import { TypeORMConnection } from 'database/typeorm/';
 
 import './routes';
 
@@ -8,8 +11,8 @@ import './routes';
         app.listen(port, () => console.log(`Express server listening on port ${port}!`));
     }
 
-    Promise.all([])
-        .then(([redisInstance]) => {
+    Promise.all([TypeORMConnection.connect()])
+        .then(([typeORMConnection]) => {
             initializeServer();
         })
         .catch(e => {

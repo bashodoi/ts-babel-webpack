@@ -1,0 +1,18 @@
+{
+    "type": "postgres",
+    "host": "server-postgres",
+    "port": 5432,
+    "username": "postgres",
+    "password": "password",
+    "database": "postgres",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/database/typeorm/entity/**/*.ts"],
+    "migrations": ["src/database/typeorm/migration/**/*.ts"],
+    "subscribers": ["src/database/typeorm/subscriber/**/*.ts"],
+    "cli": {
+        "entitiesDir": "src/database/typeorm/entity",
+        "migrationsDir": "src/database/typeorm/migration",
+        "subscribersDir": "src/database/typeorm/subscriber"
+    }
+}
