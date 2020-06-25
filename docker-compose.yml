@@ -22,8 +22,21 @@ services:
     ports:
       - 5433:5432
 
+  server-redis:
+    build:
+      context: "./docker/services/server-redis"
+    restart: always
+    volumes:
+      - redisdata:/data
+    networks:
+      - NET
+    ports:
+      - 6379:6379
+
 volumes:
   postgresdata:
+    external: true
+  redisdata:
     external: true
 
 networks:

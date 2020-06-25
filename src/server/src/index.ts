@@ -3,6 +3,9 @@ import app from 'config/express';
 
 import { TypeORMConnection } from 'database/typeorm/';
 
+import { options as redisOptions } from 'config/redis';
+import { RedisConnection } from 'database/redis';
+
 import './routes';
 
 (async function(): Promise<void> {
@@ -11,8 +14,8 @@ import './routes';
         app.listen(port, () => console.log(`Express server listening on port ${port}!`));
     }
 
-    Promise.all([TypeORMConnection.connect()])
-        .then(([typeORMConnection]) => {
+    Promise.all([TypeORMConnection.connect(), RedisConnection.connect(redisOptions)])
+        .then(([typeORMConnection, redisConnection]) => {
             initializeServer();
         })
         .catch(e => {
