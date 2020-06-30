@@ -14,7 +14,7 @@ services:
   server-postgres:
     build: "./docker/services/postgres"
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: $PG_PASSWORD
     volumes:
       - postgresdata:/var/lib/postgresql/data
     # expose:
@@ -24,7 +24,7 @@ services:
 
   server-redis:
     build:
-      context: "./docker/services/server-redis"
+      context: "./docker/services/redis"
     restart: always
     volumes:
       - redisdata:/data
